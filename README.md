@@ -1,7 +1,7 @@
 # ROSDashboard
 
 Web based dashboard to interface with your ROS creation. 
-The goal of this project is to provide dashboard interfaces that can be accessed on multiple platforms to perform simple ROS control. Expanding from my Create2 project I will be making multiple dashboard that can be deployed on a site taking advantage of the roslibjs library from [RobotWebTools](). 
+The goal of this project is to provide dashboard interfaces that can be accessed on multiple platforms to perform simple ROS control. Expanding from my Create2 project I will be making multiple dashboard that can be deployed on a site taking advantage of the roslibjs library from [RobotWebTools](https://github.com/RobotWebTools/roslibjs). 
 
 ## Valve Steamdeck
 
@@ -21,7 +21,7 @@ In order to take advantage of the built-in controls of the Steamdeck we need to 
 2) Type the following command, `flatpak --user override --filesystem=/run/udev:ro com.google.Chrome`, and hit Enter. 
 3) Restart DeckOS, configure controls to the **Gamepad with Mouse Trackpad** template for chrome to detect gamepad input. *It is recommended to reprogram the right trackpad click to the left mouse button.* 
 
-In Order for the changes to take effect you may need to close and open the chrome application from within DeckOS a few times. You can test the results using an [online gamepad tester](). 
+In Order for the changes to take effect you may need to close and open the chrome application from within DeckOS a few times. You can test the results using an [online gamepad tester](https://github.com/davidcmoffitt/gamepad-controller-test). 
 
 ## Standard PC
 
