@@ -1,0 +1,184 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin:0;
+	padding:0;	
+	height: 100%;
+	background-color: black;
+	color: white;
+	font-family:Courier New;
+	font-size: medium;
+	text-align: center;
+}
+
+#steamdeck_window{
+	height: 100%;
+	width: 100%;
+	background-color: gray;
+	/*background-image: url('../images/placeholder.png');*/
+	background-image: url('http://192.168.1.150:8080/stream?topic=/realsense/color/image_raw');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.container{
+	display: grid;
+	grid-template-columns: [first] 100px [second] 100px [third] auto [fourth] 100px [fifth] 100px [end];
+	grid-template-rows: [first] 20px [second] 10% [third] 10% [fourth] auto [fifth] 125px [sixth] 75px [last-line];
+}
+
+.map {
+	grid-column-start: 1;
+	grid-column-end: span 2;
+	grid-row-start: 5;
+	grid-row-end: span 2;
+	/*background-color: rgba(255, 0, 0, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+	overflow: hidden;
+	padding: 10px 0px 0px 0px;
+}
+
+.aux {
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 6;
+	grid-row-end: 6;
+	/*background-color: rgba(0, 0, 255, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+	align-self: center;
+	justify-self: center;
+}
+
+.spd {
+	grid-column-start: 4;
+	grid-column-end: span 2;
+	grid-row-start: 5;
+	grid-row-end: span 2;
+	/*background-color: rgba(0, 255, 0, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+}
+
+.bat {
+	grid-column-start: 1;
+	grid-column-end: span 5;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	/*background-color: rgba(0, 255, 0, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+}
+
+.bel {
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: span 2;
+	background-color: rgba(255, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.set {
+	grid-column-start: 4;
+	grid-column-end: span 2;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	/*background-color: rgba(0, 0, 255, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+	padding-right: 20px;
+}
+
+.buttonAux{
+	background-color: rgba(0, 0, 255, 0.5);
+  	border: none;
+  	color: rgba(255, 255, 255, 0.5);
+  	width: 170px;
+  	font-weight: bold;
+  	padding: 10px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+	cursor: pointer;
+	border-radius: 10px;
+	margin: 0px 10px;
+}
+
+.buttonSet{
+	background-color: rgba(0, 0, 0, 0.5);
+  	border: none;
+  	color: rgba(255, 255, 255, 0.5);
+  	float: right;
+	border-radius: 10px;
+	margin: 5px 5px;
+	cursor:pointer;
+}
+
+.sectionSB{
+	border: 1px solid white;
+	padding: 2px 5px 2px 5px;
+	margin: 4px;
+}
+
+embed{
+	width: 196px;
+	height: 200px;
+}
+
+#mapTitle{
+	margin: auto;
+	width: 150px;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 2px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#speedBox{
+	margin: auto;
+	padding:2px;	
+  	width: 80%;
+  	height: 100px;
+  	background-color: rgba(0, 0, 0, 0.5);
+  	margin-top: 80px;
+}
+
+#batterySec{
+	font-size: 0.75em;
+}
+
+#speedSec{
+	font-size: 2.0em;
+	font-weight: bold;
+	letter-spacing: -2px;
+}
+
+#chargeBar{
+	float: left;
+	width: 95px;
+	margin: inherit;
+}
+
+#chargePercent{
+	text-align: right;
+	margin: inherit;
+}
+
+#joystick{
+	position: fixed;
+	bottom: 250px;
+	right: 100px;
+}
+
+div#nipple_0_0 .front{
+    	background-image: url(../images/jfront.png) !important;
+}
+div#nipple_0_0 .back{
+    	background-image: url(../images/jback.png) !important;
+}
+
+#map > .canvas{
+	 background: rgb(127, 127, 127);
+}
+

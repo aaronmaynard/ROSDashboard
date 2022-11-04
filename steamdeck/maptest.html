@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<script type="text/javascript" src="http://static.robotwebtools.org/EaselJS/current/easeljs.min.js"></script>
+<script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+<script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+<script type="text/javascript" src="http://static.robotwebtools.org/ros2djs/current/ros2d.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+
+<script type="text/javascript" type="text/javascript">
+  /**
+   * Setup all visualization elements when the page is loaded.
+   */
+  function init() {
+    // Connect to ROS.
+    var ros = new ROSLIB.Ros({
+      url : 'ws://192.168.1.150:9090'
+    });
+
+    // Create the main viewer.
+    var viewer = new ROS2D.Viewer({
+      divID : 'map',
+      width : 150,
+      height : 150,
+      background : '#7F7F7F'
+    });
+    // Setup the map client.
+    var gridClient = new ROS2D.OccupancyGridClient({
+      ros : ros,
+      rootObject : viewer.scene
+    });
+    // Scale the canvas to fit to the map
+    gridClient.on('change', function(){
+      viewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
+      viewer.shift((-(gridClient.currentGrid.height/2)),(-(gridClient.currentGrid.width/2)));
+    });
+    
+    	var poseTopic = new ROSLIB.Topic({
+    		ros : ros,
+    		name : '/amcl_pose',
+    		messageType : 'geometry_msgs/PoseWithCovarianceStamped'
+    	});
+    
+    	var robotMarker = new ROS2D.NavigationArrow({
+    		size : 1,
+    		strokeSize : 0.2, 
+    		pulse : true
+    	});
+    	
+    	poseTopic.subscribe(
+    		function(amcl_pose) {
+    			robotMarker.x = amcl_pose.pose.pose.position.x;
+    			robotMarker.y = -amcl_pose.pose.pose.position.y;
+    			robotMarker.rotation = new THREE.Euler().setFromQuaternion(new THREE.Quaternion(
+			    amcl_pose.pose.pose.orientation.x,
+			    amcl_pose.pose.pose.orientation.y,
+			    amcl_pose.pose.pose.orientation.z,
+			    amcl_pose.pose.pose.orientation.w
+			    )
+			).z * -180 / 3.14159;
+		}
+	);
+	
+	gridClient.rootObject.addChild(robotMarker);
+	
+   }
+</script>
+</head>
+
+<body onload="init()" style="margin: 0px;">
+  <div id="map" style="text-align: center; width: 150px; height: 150px; margin: auto;"></div>
+</body>
+</html>
