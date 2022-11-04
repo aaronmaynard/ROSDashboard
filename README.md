@@ -1,6 +1,6 @@
 # ROSDashboard
 
-Web based bash board to interface with your ROS creation. 
+Web based dashboard to interface with your ROS creation. 
 The goal of this project is to provide dashboard interfaces that can be accessed on multiple platforms to perform simple ROS control. Expanding from my Create2 project I will be making multiple dashboard that can be deployed on a site taking advantage of the roslibjs library from [RobotWebTools](). 
 
 ## Valve Steamdeck
