@@ -1,4 +1,5 @@
 
+
 # Checklist
 
 ## User Interface
@@ -15,6 +16,7 @@
 - Adjustability
 	- [ ] Speed slider
 	- [ ] Theme Selector
+	- [ ] Change joystick control type
 
 ## Control Layout
 
@@ -36,3 +38,20 @@
 | BUMPER RIGHT | Aux12 |
 | JOYSTICK LEFT | TELEOP TWIST |
 | JOYSTICK RIGHT | CAMERA CONTROL | 
+
+## Joystick Control
+
+Two schools of thought for joystick control.  
+
+ 1. Single Joy Control
+	- Left joystick controls forward/back and rotational movement 
+	- **Pro's**
+		- *Right Joystick controls can control another device, such as camera*
+	- **Con's**
+		- *No way to control platforms that can translate sideways*
+ 2. Dual Joy Control
+	 - Left joystick controls all translational movement, right joystick controls all rotational movement 
+	- **Pro's**
+		- *Supports all types of drive systems, potentially even three-dimensional movement*
+	- **Con's**
+		- *Lose a dedicated controller*
