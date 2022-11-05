@@ -23,6 +23,9 @@ In order to take advantage of the built-in controls of the Steamdeck we need to 
 
 In Order for the changes to take effect you may need to close and open the chrome application from within DeckOS a few times. You can test the results using an [online gamepad tester](https://github.com/davidcmoffitt/gamepad-controller-test). 
 
+### Prototype
+![Prototype V1](https://i.imgur.com/2hix81k.png)
+
 ## Standard PC
 
 There will be a standard interface for the desktop environment. No changes necessary. 
