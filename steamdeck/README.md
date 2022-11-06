@@ -10,7 +10,7 @@
 	- [ ] Map view as the main background
 
 - Change ROS workspace 
-	- [ ] Make a prompt at load
+	- [X] Make a prompt at load
 	- [ ] Option in settings
 
 - Adjustability
