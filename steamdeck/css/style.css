@@ -1,3 +1,79 @@
+html{
+	height: 100%;
+	width: 100%;	
+}
+body{
+	margin: 0;
+	height: 100%;
+	font-family: Courier New;
+	background: #666666;
+}
+#main{
+	height: inherit;
+}
+.container{
+	display: grid;
+	grid-template-columns: [first] 200px [second] 100px [third] auto [fourth] 100px [fifth] 200px [end];
+	grid-template-rows: [first] 10px [second] 32px [third] 20% [fourth] auto [fifth] 32px [sixth] 200px [last-line];
+}
+.map {
+	grid-column-start: 1;
+	grid-column-end: span 1;
+	grid-row-start: 6;
+	grid-row-end: span 1;
+	background-color: rgba(255, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	overflow: hidden;
+	padding: 10px 0px 0px 0px;
+}
+.auxButtons {
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 6;
+	grid-row-end: 6;
+	background-color: rgba(0, 0, 255, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	align-self: center;
+	justify-self: center;
+}
+.infoBox {
+	grid-column-start: 5;
+	grid-column-end: span 1;
+	grid-row-start: 6;
+	grid-row-end: span 1;
+	background-color: rgba(0, 255, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.statusBar {
+	grid-column-start: 1;
+	grid-column-end: span 5;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	background-color: rgba(0, 255, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.notifications {
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	background-color: rgba(255, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.settingsButtons {
+	grid-column-start: 5;
+	grid-column-end: span 1;
+	grid-row-start: 2;
+	grid-row-end: span 2;
+	background-color: rgba(0, 0, 255, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.settingsButtons a{
+	cursor: pointer;
+	margin-top: 10px;
+	margin-right: 10px;
+	float: right;
+}
 .overlay {
 	height: 0%;
 	width: 100%;
@@ -10,7 +86,6 @@
 	overflow: hidden;
 	transition: 0.5s;
 }
-
 .overlay-content {
 	position: relative;
 	top: 25%;
@@ -18,7 +93,6 @@
 	text-align: center;
 	margin-top: 30px;
 }
-
 .overlay span, .overlay input, .overlay a {
 	padding: 8px;
 	text-decoration: none;
@@ -27,28 +101,23 @@
 	display: inline-block;
 	transition: 0.3s;
 }
-
 .overlay .closebtn {
 	position: absolute;
 	top: 20px;
 	right: 45px;
 	font-size: 60px;
 }
-
 .overlay input{
 	border-radius: 12px;
 	margin-left: 10px;
 	border: 2px solid #4CAF50;
 }
-
 .overlay #wsButton{
 	background-color: #4CAF50;
 }
-
 .overlay #wsText{
 	color: #606060;
 }
-
 @media screen and (max-height: 450px) {
 	.overlay a {font-size: 20px}
 	.overlay .closebtn {
@@ -57,14 +126,12 @@
 	right: 35px;
 	}
 }
-
 .overlay .shaketh {
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 	transform: translate3d(0, 0, 0);
 	backface-visibility: hidden;
 	perspective: 1000px;
 }
-
 @keyframes shake {
 	10%, 90% {
 		transform: translate3d(-1px, 0, 0);
@@ -82,7 +149,6 @@
 		transform: translate3d(4px, 0, 0);
 	}
 }
-
 .lds-grid {
   display: inline-block;
   position: relative;
@@ -149,4 +215,23 @@
   50% {
     opacity: 0.5;
   }
+}
+.statusBar div{
+	width: 50%;
+	color:#fff!important;
+	background-color:#000;
+}
+.statusBar div:nth-child(1){
+	float: left;
+	transform: scaleX(-1);
+}
+.statusBar div:nth-child(2){
+	float: right;
+}
+.statusBar div div{
+	height: 10px;
+	margin: 0px;
+	/*width: 72%;*/
+	color:#fff!important;
+	/*background-color:#4CAF50!important*/
 }

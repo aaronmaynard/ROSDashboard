@@ -11,6 +11,12 @@
 		<script type="text/javascript" src="js/nipplejs.js"></script>
 		<script type="text/javascript" src="js/mod.js"></script>
 		<script type="text/javascript" src="js/ros.js"></script>
+		<!-- DEMO TOOLS -->
+		<link rel="stylesheet" href="demo/demo.css">
+		<link rel="stylesheet" href="demo/jquery-ui.min.css">
+		<script src="demo/jquery.min.js"></script>
+		<script src="demo/jquery-ui.min.js"></script>
+		
 	</head>
 	<body>
 		<!-- INITIALIZATION OVERLAY -->
@@ -25,13 +31,45 @@
 			</div>
 		</div>
 		<script>
-			openSetup();
+			//openSetup();
 		</script>
-		<!-- MAIN DISPLAY -->
-		<h2>Main Display</h2>
-		<p>All of the content will go here</p>
-		<span style="font-size:30px;cursor:pointer" onclick="openSetup()">&#9776; Open Setup Overlay</span>
-		
-		
+		<!-- MAIN DISPLAY -->		
+		<div id="main" class="container">
+			<!--
+			The following areas are sections set by the CSS-grid.  Each section may have its own settings.
+			-->
+			<!-- STATUS BAR -->
+			<div class="statusBar">
+				<div><div></div></div>
+				<div><div></div></div>
+			</div>			
+			<!-- NOTIFICATIONS -->
+			<div class="notifications">Notification Area</div>
+				<div id="slider"></div>
+			<!-- MAP -->
+			<div class="map">
+				<div id="mapTitle">Topdown View</div>
+				<div id="mapWindow">
+					
+				</div>
+			</div>			
+			<!-- CENTRAL BUTTONS -->
+			<div class="auxButtons">
+				<button class="buttonAux" onclick="">AUX 1</button>
+				<button class="buttonAux" onclick="">AUX 2</button>
+				<button class="buttonAux" onclick="">AUX 3</button>
+			</div>
+			<!-- INFO BOX BR -->
+			<div class="infoBox">
+				<div id="demoBattery"></div>
+			</div>
+			<!-- JOYSTICK -->
+			<div id="joystick" class="joystick"></div>
+			<!-- SETTINGS -->
+			<div class="settingsButtons">
+				<a onclick="openSetup()"><img src="images/settings-icon.png" alt="Settings" width="64" height="64"></a>
+			</div>
+		</div>
+		<script type="text/javascript" src="demo/demo.js"></script>
 	</body>
 </html>

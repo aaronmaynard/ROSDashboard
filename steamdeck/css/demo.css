@@ -1,0 +1,16 @@
+#slider {
+    width:500px;
+	height: 15px;
+    margin:0 auto;
+    background-image: -webkit-linear-gradient(left, rgb(255,0,0) 0%, rgb(0,128,0) 28%, rgb(0,0,255) 72%, rgb(255,0,0) 100%);
+    background-image: -moz-linear-gradient(left, rgb(255,0,0) 0%, rgb(0,128,0) 28%, rgb(0,0,255) 72%, rgb(255,0,0) 100%);
+    background-image: -o-linear-gradient(left, rgb(255,0,0) 0%, rgb(0,128,0) 28%, rgb(0,0,255) 72%, rgb(255,0,0) 100%);
+    background-image: linear-gradient(left, rgb(255,0,0) 0%, rgb(0,128,0) 28%, rgb(0,0,255) 72%, rgb(255,0,0) 100%);
+}
+
+#result {
+    width:100px;
+    height:100px;
+    margin:100px auto;
+    border-radius:50%;
+}
