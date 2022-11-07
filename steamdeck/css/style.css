@@ -10,6 +10,9 @@ body{
 }
 #main{
 	height: inherit;
+	/*background-image: url('../images/example.jpg');*/
+	/*background-image: url('http://192.168.1.150:8080/stream?topic=/realsense/color/image_raw');*/
+	background-size:100% 100%;
 }
 .container{
 	display: grid;
@@ -25,8 +28,8 @@ body{
 	grid-column-end: span 1;
 	grid-row-start: 6;
 	grid-row-end: span 1;
-	background-color: rgba(255, 0, 0, 0.3);
-	border: 1px solid rgba(0, 0, 0, 0.8);
+	/*background-color: rgba(255, 0, 0, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
 	overflow: hidden;
 	margin-top: -10px;
 }
@@ -64,31 +67,31 @@ body{
 }
 .map #mapWindow .mapTick:nth-of-type(1){
 	transform: rotateY(0deg) rotate(90deg);
-	margin-left: 86px;
+	margin-left: 87px;
 	margin-top: 2px;
 }  
 .map #mapWindow .mapTick:nth-of-type(2){
 	transform: rotateY(0deg) rotate(-45deg);
 	margin-top: 2px;
-	margin-left: 172px;
+	margin-left: 174px;
 }  
 .map #mapWindow .mapTick:nth-of-type(3){
-	margin-left: 172px;
+	margin-left: 174px;
 	margin-top: 89px;
 }  
 .map #mapWindow .mapTick:nth-of-type(4){
 	transform: rotateY(0deg) rotate(45deg);
-	margin-top: 176px;
-	margin-left: 172px;
+	margin-top: 178px;
+	margin-left: 174px;
 }  
 .map #mapWindow .mapTick:nth-of-type(5){
 	transform: rotateY(0deg) rotate(90deg);
 	margin-left: 87px;
-	margin-top: 176px;
+	margin-top: 178px;
 }  
 .map #mapWindow .mapTick:nth-of-type(6){
 	transform: rotateY(0deg) rotate(-45deg);
-	margin-top: 176px;	
+	margin-top: 178px;	
 }  
 .map #mapWindow .mapTick:nth-of-type(7){
 	margin-top: 89px;	
@@ -102,8 +105,8 @@ body{
 	grid-column-end: 3;
 	grid-row-start: 6;
 	grid-row-end: 6;
-	background-color: rgba(0, 0, 255, 0.3);
-	border: 1px solid rgba(0, 0, 0, 0.8);
+	/*background-color: rgba(0, 0, 255, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
 	align-self: center;
 	justify-self: center;
 	text-align: center;
@@ -171,8 +174,8 @@ body{
 	grid-column-end: span 1;
 	grid-row-start: 2;
 	grid-row-end: span 2;
-	background-color: rgba(0, 0, 255, 0.3);
-	border: 1px solid rgba(0, 0, 0, 0.8);
+	/*background-color: rgba(0, 0, 255, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
 }
 .settingsButtons a{
 	float: right;
