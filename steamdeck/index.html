@@ -6,6 +6,7 @@
 		<meta name="author" content="Aaron Travis Maynard">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>::: ROS Controller - Steamdeck</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript" src="js/roslib.min.js"></script>
 		<script type="text/javascript" src="js/nipplejs.js"></script>
@@ -44,30 +45,53 @@
 				<div><div></div></div>
 			</div>			
 			<!-- NOTIFICATIONS -->
-			<div class="notifications">Notification Area</div>
+			<div class="notifications">
+				<p>The quick brown fox jumps over the lazy dog</p>
+				<p>Battery Simulator</p>
 				<div id="slider"></div>
+			</div>
 			<!-- MAP -->
-			<div class="map">
+			<div class="map uiElement">
 				<div id="mapTitle">Topdown View</div>
 				<div id="mapWindow">
-					
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<div class="mapTick"></div>
+					<svg xmlns="http://www.w3.org/2000/svg" class="svg-triangle">
+						  <defs>
+							<linearGradient id="MyGradient" x2="0%" y2="100%">
+							  <stop offset="5%" stop-color="#ffffff10" />
+							  <stop offset="95%" stop-color="#ffffff50" />
+							</linearGradient>
+						  </defs>
+						<polygon points="0,0 178,0 89, 89"/>
+					</svg>
 				</div>
 			</div>			
 			<!-- CENTRAL BUTTONS -->
-			<div class="auxButtons">
-				<button class="buttonAux" onclick="">AUX 1</button>
-				<button class="buttonAux" onclick="">AUX 2</button>
-				<button class="buttonAux" onclick="">AUX 3</button>
+			<div class="auxButtons uiElement">
+				<button class="buttonAux" onclick=""><span>Y</span><span>AUX 1</span></button>
+				<br>
+				<button class="buttonAux" onclick=""><span>X</span><span>AUX 2</span></button>
+				<button class="buttonAux" onclick=""><span>B</span><span>AUX 3</span></button>
+				<br>
+				<button class="buttonAux" onclick=""><span>A</span><span>AUX 4</span></button>
 			</div>
 			<!-- INFO BOX BR -->
-			<div class="infoBox">
+			<div class="infoBox uiElement">
 				<div id="demoBattery"></div>
 			</div>
 			<!-- JOYSTICK -->
 			<div id="joystick" class="joystick"></div>
 			<!-- SETTINGS -->
-			<div class="settingsButtons">
-				<a onclick="openSetup()"><img src="images/settings-icon.png" alt="Settings" width="64" height="64"></a>
+			<div class="settingsButtons uiElement">
+				
+				<a onclick="openSetup()"><button class="buttonSet" onclick=""><i class="fa fa-gear" style="font-size:24px"></i></button></a>
 			</div>
 		</div>
 		<script type="text/javascript" src="demo/demo.js"></script>

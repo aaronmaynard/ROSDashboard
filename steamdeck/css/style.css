@@ -16,6 +16,10 @@ body{
 	grid-template-columns: [first] 200px [second] 100px [third] auto [fourth] 100px [fifth] 200px [end];
 	grid-template-rows: [first] 10px [second] 32px [third] 20% [fourth] auto [fifth] 32px [sixth] 200px [last-line];
 }
+.uiElement{
+	opacity: 1.0; /*Later change to 0.5*/
+	margin: 10px;
+}
 .map {
 	grid-column-start: 1;
 	grid-column-end: span 1;
@@ -24,8 +28,75 @@ body{
 	background-color: rgba(255, 0, 0, 0.3);
 	border: 1px solid rgba(0, 0, 0, 0.8);
 	overflow: hidden;
-	padding: 10px 0px 0px 0px;
+	margin-top: -10px;
 }
+.map #mapTitle{
+	margin: auto;
+	background-color: rgba(0, 0, 0, 1);
+	text-transform: uppercase;
+	font-weight: 1000;
+	color: white;
+	margin-top: 0px;
+	text-align: center;
+}
+.map #mapWindow{
+	background : #7F7F7F;
+	width: inherit;
+	height: calc(100% - 18px);
+}
+.map #mapWindow .svg-triangle{
+    margin: 0 auto;
+    width: 180px;
+    height: 178px;
+  }
+.map #mapWindow .svg-triangle polygon {
+    stroke:#ffffff50;
+    stroke-width:0;
+    cursor: pointer;
+    shape-rendering: crispEdges;
+    fill: url(#MyGradient);
+}
+.map #mapWindow .mapTick{
+	width: 4px;
+	height: 0px;
+	border: 1px solid #ffffff50;
+	position: absolute;
+}
+.map #mapWindow .mapTick:nth-of-type(1){
+	transform: rotateY(0deg) rotate(90deg);
+	margin-left: 86px;
+	margin-top: 2px;
+}  
+.map #mapWindow .mapTick:nth-of-type(2){
+	transform: rotateY(0deg) rotate(-45deg);
+	margin-top: 2px;
+	margin-left: 172px;
+}  
+.map #mapWindow .mapTick:nth-of-type(3){
+	margin-left: 172px;
+	margin-top: 89px;
+}  
+.map #mapWindow .mapTick:nth-of-type(4){
+	transform: rotateY(0deg) rotate(45deg);
+	margin-top: 176px;
+	margin-left: 172px;
+}  
+.map #mapWindow .mapTick:nth-of-type(5){
+	transform: rotateY(0deg) rotate(90deg);
+	margin-left: 87px;
+	margin-top: 176px;
+}  
+.map #mapWindow .mapTick:nth-of-type(6){
+	transform: rotateY(0deg) rotate(-45deg);
+	margin-top: 176px;	
+}  
+.map #mapWindow .mapTick:nth-of-type(7){
+	margin-top: 89px;	
+}  
+.map #mapWindow .mapTick:nth-of-type(8){
+	transform: rotateY(0deg) rotate(45deg);
+	margin-top: 2px;	
+}  
 .auxButtons {
 	grid-column-start: 3;
 	grid-column-end: 3;
@@ -35,7 +106,38 @@ body{
 	border: 1px solid rgba(0, 0, 0, 0.8);
 	align-self: center;
 	justify-self: center;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
 }
+.auxButtons button {
+  color: white;
+  font-weight: 1000;
+  background-color: black;
+  position: relative;
+  animation: myfirst 5s linear 2s infinite alternate;
+  cursor: pointer;
+  font-family: Courier New;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  border-radius: 3px;
+  margin: 3px;
+}
+
+.auxButtons button span:first-child{
+	background-color: grey;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.auxButtons button span:last-child{
+    display: inline-block;
+	width: 100px;
+}
+
 .infoBox {
 	grid-column-start: 5;
 	grid-column-end: span 1;
@@ -59,6 +161,10 @@ body{
 	grid-row-end: 3;
 	background-color: rgba(255, 0, 0, 0.3);
 	border: 1px solid rgba(0, 0, 0, 0.8);
+	text-align: center;
+}
+.notifications div{
+	margin: auto;
 }
 .settingsButtons {
 	grid-column-start: 5;
@@ -69,10 +175,20 @@ body{
 	border: 1px solid rgba(0, 0, 0, 0.8);
 }
 .settingsButtons a{
-	cursor: pointer;
-	margin-top: 10px;
-	margin-right: 10px;
 	float: right;
+}
+.settingsButtons button {
+  color: white;
+  font-weight: 1000;
+  background-color: black;
+  position: relative;
+  animation: myfirst 5s linear 2s infinite alternate;
+  cursor: pointer;
+  font-family: Courier New;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 3px;
+  margin: 3px;
 }
 .overlay {
 	height: 0%;
