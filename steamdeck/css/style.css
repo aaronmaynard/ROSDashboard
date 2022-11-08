@@ -1,3 +1,4 @@
+@font-face { font-family: ShareTechMono; src: url('ShareTechMono-Regular.ttf'); } 
 html{
 	height: 100%;
 	width: 100%;	
@@ -5,7 +6,7 @@ html{
 body{
 	margin: 0;
 	height: 100%;
-	font-family: Courier New;
+	font-family: ShareTechMono;
 	background: #666666;
 }
 #main{
@@ -37,7 +38,6 @@ body{
 	margin: auto;
 	background-color: rgba(0, 0, 0, 1);
 	text-transform: uppercase;
-	font-weight: 1000;
 	color: white;
 	margin-top: 0px;
 	text-align: center;
@@ -115,12 +115,10 @@ body{
 }
 .auxButtons button {
   color: white;
-  font-weight: 1000;
   background-color: black;
   position: relative;
   animation: myfirst 5s linear 2s infinite alternate;
   cursor: pointer;
-  font-family: Courier New;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 3px;
@@ -134,6 +132,7 @@ body{
     padding-right: 3px;
     border: 1px solid white;
     border-radius: 3px;
+	font-weight: 800;
 }
 
 .auxButtons button span:last-child{
@@ -146,8 +145,10 @@ body{
 	grid-column-end: span 1;
 	grid-row-start: 6;
 	grid-row-end: span 1;
-	background-color: rgba(0, 255, 0, 0.3);
-	border: 1px solid rgba(0, 0, 0, 0.8);
+	/*background-color: rgba(0, 255, 0, 0.3);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+	justify-self: end;
+	width: 275px;
 }
 .statusBar {
 	grid-column-start: 1;
@@ -182,12 +183,10 @@ body{
 }
 .settingsButtons button {
   color: white;
-  font-weight: 1000;
   background-color: black;
   position: relative;
   animation: myfirst 5s linear 2s infinite alternate;
   cursor: pointer;
-  font-family: Courier New;
   padding-top: 3px;
   padding-bottom: 3px;
   border-radius: 3px;
@@ -197,7 +196,7 @@ body{
 	height: 0%;
 	width: 100%;
 	position: fixed;
-	z-index: 1;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	background-color: rgb(0,0,0);
@@ -353,4 +352,104 @@ body{
 	/*width: 72%;*/
 	color:#fff!important;
 	/*background-color:#4CAF50!important*/
+}
+#cluster {  display: grid;
+  grid-template-columns: 1.2fr 0.5fr 1.3fr;
+  grid-template-rows: 1fr 0fr 0fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "localizationScore localizationScore localizationScore"
+    "velocity velocity velocitySystem"
+    "velocity velocity velocityPercentage"
+    "connectedClients batteryPercentage batteryPercentage";
+  font-size: 32px;
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+	border-radius: 3px;
+}
+
+#cluster div{
+	margin: 0px;
+	text-align: center;
+	display:inline-block;
+}
+
+#cluster div i{
+	vertical-align: middle;
+	margin-bottom: 4px;
+}
+
+#cluster .localizationScore { 
+	grid-area: localizationScore; 
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	align-self: center;
+	justify-self: center;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	width: calc(100% - 12px);
+}
+#cluster .connectedClients { 
+	grid-area: connectedClients; 
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	align-self: center;
+	justify-self: center;
+	width: calc(100% - 12px);
+}
+
+#cluster .batteryPercentage { 
+	grid-area: batteryPercentage; 
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	align-self: center;
+	justify-self: center;
+	width: calc(100% - 12px);
+}
+
+#cluster .velocity { 
+	grid-area: velocity;  
+	color: white;
+	align-self: center;
+	justify-self: center;
+	font-size: 72px;
+	margin-left: 12px;
+}
+
+#cluster .velocityPercentage{ 
+	grid-area: velocityPercentage;  
+	color: white;
+	align-self: center;
+	justify-self: center;
+	width: 100%;
+	width: calc(100% - 12px);
+}
+
+#cluster .velocityPercentage div{
+	width: 100%;
+	background-color: white;
+	align-self: center;
+	justify-self: center;
+	display: block;
+}
+
+#cluster .velocityPercentage div div{ 
+	height: 16px;
+	margin: 0px;
+	width: 100%;
+	background-color: grey;
+	align-self: center;
+	justify-self: center;
+}
+
+#cluster .velocitySystem { 
+	grid-area: velocitySystem;  
+	color: white;
+	align-self: center;
+	justify-self: center;
 }

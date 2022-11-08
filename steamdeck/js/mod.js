@@ -1,7 +1,7 @@
-function openSetup() {
+function connectClient() {
 	document.getElementById("setupOverlay").style.height = "100%";
 }
 
-function closeSetup() {
+function connectClientClose() {
 	document.getElementById("setupOverlay").style.height = "0%";
 }

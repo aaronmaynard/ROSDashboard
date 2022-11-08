@@ -22,9 +22,9 @@
 	<body>
 		<!-- INITIALIZATION OVERLAY -->
 		<div id="setupOverlay" class="overlay">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeSetup()">&times;</a>
+			<a href="javascript:void(0)" class="closebtn" onclick="connectClientClose()">&times;</a>
 			<div class="overlay-content">
-				<span>Workspace IP: <input type="text" id="wsText" value="localhost"><input type="button" id="wsButton" onclick="setWS()" value="Connect"></span>
+				<span>Workspace IP:Port <input type="text" id="wsText" value="localhost:9090"><input type="button" id="wsButton" onclick="setWS()" value="Connect"></span>
 				<br>
 				<div id="loader" style="visibility: hidden;">
 					<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
@@ -47,9 +47,10 @@
 			<!-- NOTIFICATIONS -->
 			<div class="notifications">
 				<h2>Notification Area</h2>
-				<p>The quick brown fox jumps over the lazy dog</p>
 				<p>Battery Simulator</p>
-				<div id="slider"></div>
+				<div id="sliderBattery"></div>
+				<p>Velocity Simulator</p>
+				<div id="sliderVelocity"></div>
 			</div>
 			<!-- MAP -->
 			<div class="map uiElement">
@@ -85,14 +86,21 @@
 			</div>
 			<!-- INFO BOX BR -->
 			<div class="infoBox uiElement">
-				<div id="demoBattery"></div>
+				<div id="cluster">
+				  <div class="localizationScore"><i class="fa fa-map" style="font-size:16px"></i> BARBAR 000</div>
+				  <div class="connectedClients"><i class="fa fa-desktop" style="font-size:16px"></i> 0</div>
+				  <div class="batteryPercentage"><i class="fa fa-battery-0" style="font-size:16px"></i> 000</div>
+				  <div class="velocity">0.00</div>
+				  <div class="velocityPercentage"><div><div></div></div></div>
+				  <div class="velocitySystem">M/S</div>
+				</div>
 			</div>
 			<!-- JOYSTICK -->
 			<div id="joystick" class="joystick"></div>
 			<!-- SETTINGS -->
 			<div class="settingsButtons uiElement">
-				
 				<a onclick="openSetup()"><button class="buttonSet" onclick=""><i class="fa fa-gear" style="font-size:24px"></i></button></a>
+				<a onclick="connectClient()"><button class="buttonSet" onclick=""><i class="fa fa-wifi" style="font-size:24px"></i></button></a>
 			</div>
 		</div>
 		<script type="text/javascript" src="demo/demo.js"></script>
