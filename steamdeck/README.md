@@ -10,8 +10,8 @@
 	- [ ] Map view as the main background
 
 - Change ROS workspace 
-	- [ ] Make a prompt at load
-	- [ ] Option in settings
+	- [X] Make a prompt at load
+	- [X] Option in settings
 
 - Adjustability
 	- [ ] Speed slider
