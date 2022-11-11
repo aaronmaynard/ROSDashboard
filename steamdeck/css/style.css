@@ -1,29 +1,39 @@
-@font-face { font-family: ShareTechMono; src: url('ShareTechMono-Regular.ttf'); } 
-html{
-	height: 100%;
-	width: 100%;	
+@font-face {
+	font-family: ShareTechMono;
+	src: url('ShareTechMono-Regular.ttf');
 }
-body{
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
 	margin: 0;
 	height: 100%;
 	font-family: ShareTechMono;
 	background: #666666;
 }
-#main{
+
+#main {
 	height: inherit;
 	/*background-image: url('../images/example.jpg');*/
 	/*background-image: url('http://192.168.1.150:8080/stream?topic=/realsense/color/image_raw');*/
-	background-size:100% 100%;
+	background-size: 100% 100%;
 }
-.container{
+
+.container {
 	display: grid;
 	grid-template-columns: [first] 200px [second] 100px [third] auto [fourth] 100px [fifth] 200px [end];
 	grid-template-rows: [first] 10px [second] 32px [third] 20% [fourth] auto [fifth] 32px [sixth] 200px [last-line];
 }
-.uiElement{
-	opacity: 1.0; /*Later change to 0.5*/
+
+.uiElement {
+	opacity: 1.0;
+ /*Later change to 0.5*/
 	margin: 10px;
 }
+
 .map {
 	grid-column-start: 1;
 	grid-column-end: span 1;
@@ -34,7 +44,8 @@ body{
 	overflow: hidden;
 	margin-top: -10px;
 }
-.map #mapTitle{
+
+.map #mapTitle {
 	margin: auto;
 	background-color: rgba(0, 0, 0, 1);
 	text-transform: uppercase;
@@ -42,64 +53,77 @@ body{
 	margin-top: 0px;
 	text-align: center;
 }
-.map #mapWindow{
-	background : #7F7F7F;
+
+.map #mapWindow {
+	background: #7F7F7F;
 	width: inherit;
 	height: calc(100% - 18px);
 }
-.map #mapWindow .svg-triangle{
-    margin: 0 auto;
-    width: 180px;
-    height: 178px;
-  }
-.map #mapWindow .svg-triangle polygon {
-    stroke:#ffffff50;
-    stroke-width:0;
-    cursor: pointer;
-    shape-rendering: crispEdges;
-    fill: url(#MyGradient);
+
+.map #mapWindow .svg-triangle {
+	margin: 0 auto;
+	width: 180px;
+	height: 178px;
 }
-.map #mapWindow .mapTick{
+
+.map #mapWindow .svg-triangle polygon {
+	stroke: #ffffff50;
+	stroke-width: 0;
+	cursor: pointer;
+	shape-rendering: crispEdges;
+	fill: url(#MyGradient);
+}
+
+.map #mapWindow .mapTick {
 	width: 4px;
 	height: 0px;
 	border: 1px solid #ffffff50;
 	position: absolute;
 }
-.map #mapWindow .mapTick:nth-of-type(1){
+
+.map #mapWindow .mapTick:nth-of-type(1) {
 	transform: rotateY(0deg) rotate(90deg);
 	margin-left: 87px;
 	margin-top: 2px;
-}  
-.map #mapWindow .mapTick:nth-of-type(2){
+}
+
+.map #mapWindow .mapTick:nth-of-type(2) {
 	transform: rotateY(0deg) rotate(-45deg);
 	margin-top: 2px;
 	margin-left: 174px;
-}  
-.map #mapWindow .mapTick:nth-of-type(3){
+}
+
+.map #mapWindow .mapTick:nth-of-type(3) {
 	margin-left: 174px;
 	margin-top: 89px;
-}  
-.map #mapWindow .mapTick:nth-of-type(4){
+}
+
+.map #mapWindow .mapTick:nth-of-type(4) {
 	transform: rotateY(0deg) rotate(45deg);
 	margin-top: 178px;
 	margin-left: 174px;
-}  
-.map #mapWindow .mapTick:nth-of-type(5){
+}
+
+.map #mapWindow .mapTick:nth-of-type(5) {
 	transform: rotateY(0deg) rotate(90deg);
 	margin-left: 87px;
 	margin-top: 178px;
-}  
-.map #mapWindow .mapTick:nth-of-type(6){
+}
+
+.map #mapWindow .mapTick:nth-of-type(6) {
 	transform: rotateY(0deg) rotate(-45deg);
-	margin-top: 178px;	
-}  
-.map #mapWindow .mapTick:nth-of-type(7){
-	margin-top: 89px;	
-}  
-.map #mapWindow .mapTick:nth-of-type(8){
+	margin-top: 178px;
+}
+
+.map #mapWindow .mapTick:nth-of-type(7) {
+	margin-top: 89px;
+}
+
+.map #mapWindow .mapTick:nth-of-type(8) {
 	transform: rotateY(0deg) rotate(45deg);
-	margin-top: 2px;	
-}  
+	margin-top: 2px;
+}
+
 .auxButtons {
 	grid-column-start: 3;
 	grid-column-end: 3;
@@ -113,30 +137,31 @@ body{
 	position: absolute;
 	bottom: 0px;
 }
+
 .auxButtons button {
-  color: white;
-  background-color: black;
-  position: relative;
-  animation: myfirst 5s linear 2s infinite alternate;
-  cursor: pointer;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 3px;
-  border-radius: 3px;
-  margin: 3px;
+	color: white;
+	background-color: black;
+	position: relative;
+	animation: myfirst 5s linear 2s infinite alternate;
+	cursor: pointer;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	border-radius: 3px;
+	margin: 3px;
 }
 
-.auxButtons button span:first-child{
+.auxButtons button span:first-child {
 	background-color: grey;
-    padding-left: 3px;
-    padding-right: 3px;
-    border: 1px solid white;
-    border-radius: 3px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border: 1px solid white;
+	border-radius: 3px;
 	font-weight: 800;
 }
 
-.auxButtons button span:last-child{
-    display: inline-block;
+.auxButtons button span:last-child {
+	display: inline-block;
 	width: 100px;
 }
 
@@ -150,6 +175,7 @@ body{
 	justify-self: end;
 	width: 275px;
 }
+
 .statusBar {
 	grid-column-start: 1;
 	grid-column-end: span 5;
@@ -158,6 +184,7 @@ body{
 	background-color: rgba(0, 255, 0, 0.3);
 	border: 1px solid rgba(0, 0, 0, 0.8);
 }
+
 .notifications {
 	grid-column-start: 3;
 	grid-column-end: 3;
@@ -167,31 +194,36 @@ body{
 	border: 1px solid rgba(0, 0, 0, 0.8);
 	text-align: center;
 }
-.notifications div{
+
+.notifications div {
 	margin: auto;
 }
+
 .settingsButtons {
 	grid-column-start: 5;
 	grid-column-end: span 1;
 	grid-row-start: 2;
 	grid-row-end: span 2;
 	/*background-color: rgba(0, 0, 255, 0.3);*/
-	/*border: 1px solid rgba(0, 0, 0, 0.8);*/
+	/*border: 1px solid rgba(0, 0, 0, 0.8);*/;
 }
-.settingsButtons a{
+
+.settingsButtons a {
 	float: right;
 }
+
 .settingsButtons button {
-  color: white;
-  background-color: black;
-  position: relative;
-  animation: myfirst 5s linear 2s infinite alternate;
-  cursor: pointer;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-radius: 3px;
-  margin: 3px;
+	color: white;
+	background-color: black;
+	position: relative;
+	animation: myfirst 5s linear 2s infinite alternate;
+	cursor: pointer;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-radius: 3px;
+	margin: 3px;
 }
+
 .overlay {
 	height: 0%;
 	width: 100%;
@@ -204,6 +236,7 @@ body{
 	overflow: hidden;
 	transition: 0.5s;
 }
+
 .overlay-content {
 	position: relative;
 	top: 25%;
@@ -211,7 +244,8 @@ body{
 	text-align: center;
 	margin-top: 30px;
 }
-.overlay span, .overlay input, .overlay a, .overlay p{
+
+.overlay span, .overlay input, .overlay a, .overlay p {
 	padding: 8px;
 	text-decoration: none;
 	font-size: 24px;
@@ -219,42 +253,52 @@ body{
 	display: inline-block;
 	transition: 0.3s;
 }
+
 .overlay .closebtn {
 	position: absolute;
 	top: 0px;
 	right: 10px;
 	font-size: 60px;
 }
-.overlay input{
+
+.overlay input {
 	border-radius: 12px;
 	margin-left: 10px;
 	border: 2px solid #4CAF50;
 }
-.overlay #wsButton{
+
+.overlay #wsButton {
 	background-color: #4CAF50;
 }
-.overlay #wsText{
+
+.overlay #wsText {
 	color: #606060;
 }
+
 @media screen and (max-height: 450px) {
-	.overlay a {font-size: 20px}
+	.overlay a {
+		font-size: 20px;
+	}
+
 	.overlay .closebtn {
-	font-size: 40px;
-	top: 15px;
-	right: 35px;
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
 	}
 }
+
 .overlay .shaketh {
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 	transform: translate3d(0, 0, 0);
 	backface-visibility: hidden;
 	perspective: 1000px;
 }
+
 @keyframes shake {
 	10%, 90% {
 		transform: translate3d(-1px, 0, 0);
 	}
-	  
+
 	20%, 80% {
 		transform: translate3d(2px, 0, 0);
 	}
@@ -267,122 +311,140 @@ body{
 		transform: translate3d(4px, 0, 0);
 	}
 }
+
 .lds-grid {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
 }
+
 .lds-grid div {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #fff;
-  animation: lds-grid 1.2s linear infinite;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #fff;
+	animation: lds-grid 1.2s linear infinite;
 }
+
 .lds-grid div:nth-child(1) {
-  top: 8px;
-  left: 8px;
-  animation-delay: 0s;
+	top: 8px;
+	left: 8px;
+	animation-delay: 0s;
 }
+
 .lds-grid div:nth-child(2) {
-  top: 8px;
-  left: 32px;
-  animation-delay: -0.4s;
+	top: 8px;
+	left: 32px;
+	animation-delay: -0.4s;
 }
+
 .lds-grid div:nth-child(3) {
-  top: 8px;
-  left: 56px;
-  animation-delay: -0.8s;
+	top: 8px;
+	left: 56px;
+	animation-delay: -0.8s;
 }
+
 .lds-grid div:nth-child(4) {
-  top: 32px;
-  left: 8px;
-  animation-delay: -0.4s;
+	top: 32px;
+	left: 8px;
+	animation-delay: -0.4s;
 }
+
 .lds-grid div:nth-child(5) {
-  top: 32px;
-  left: 32px;
-  animation-delay: -0.8s;
+	top: 32px;
+	left: 32px;
+	animation-delay: -0.8s;
 }
+
 .lds-grid div:nth-child(6) {
-  top: 32px;
-  left: 56px;
-  animation-delay: -1.2s;
+	top: 32px;
+	left: 56px;
+	animation-delay: -1.2s;
 }
+
 .lds-grid div:nth-child(7) {
-  top: 56px;
-  left: 8px;
-  animation-delay: -0.8s;
+	top: 56px;
+	left: 8px;
+	animation-delay: -0.8s;
 }
+
 .lds-grid div:nth-child(8) {
-  top: 56px;
-  left: 32px;
-  animation-delay: -1.2s;
+	top: 56px;
+	left: 32px;
+	animation-delay: -1.2s;
 }
+
 .lds-grid div:nth-child(9) {
-  top: 56px;
-  left: 56px;
-  animation-delay: -1.6s;
+	top: 56px;
+	left: 56px;
+	animation-delay: -1.6s;
 }
+
 @keyframes lds-grid {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+	0%, 100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
 }
-.statusBar div{
+
+.statusBar div {
 	width: 50%;
-	color:#fff!important;
-	background-color:#000;
+	color: #fff!important;
+	background-color: #000;
 }
-.statusBar div:nth-child(1){
+
+.statusBar div:nth-child(1) {
 	float: left;
 	transform: scaleX(-1);
 }
-.statusBar div:nth-child(2){
+
+.statusBar div:nth-child(2) {
 	float: right;
 }
-.statusBar div div{
+
+.statusBar div div {
 	height: 10px;
 	margin: 0px;
 	/*width: 72%;*/
-	color:#fff!important;
-	/*background-color:#4CAF50!important*/
+	color: #fff!important;
+	/*background-color:#4CAF50!important*/;
 }
-#cluster {  display: grid;
-  grid-template-columns: 1.2fr 0.5fr 1.3fr;
-  grid-template-rows: 1fr 0fr 0fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "localizationScore localizationScore localizationScore"
+
+#cluster {
+	display: grid;
+	grid-template-columns: 1.2fr 0.5fr 1.3fr;
+	grid-template-rows: 1fr 0fr 0fr 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas: "localizationScore localizationScore localizationScore"
     "velocity velocity velocitySystem"
     "velocity velocity velocityPercentage"
     "connectedClients batteryPercentage batteryPercentage";
-  font-size: 32px;
-  margin: 0px;
-  padding: 0px;
-  background-color: black;
+	font-size: 32px;
+	margin: 0px;
+	padding: 0px;
+	background-color: black;
 	border-radius: 3px;
 }
 
-#cluster div{
+#cluster div {
 	margin: 0px;
 	text-align: center;
-	display:inline-block;
+	display: inline-block;
 }
 
-#cluster div i{
+#cluster div i {
 	vertical-align: middle;
 	margin-bottom: 4px;
 }
 
-#cluster .localizationScore { 
-	grid-area: localizationScore; 
+#cluster .localizationScore {
+	grid-area: localizationScore;
 	color: white;
 	border: 1px solid white;
 	border-radius: 3px;
@@ -392,8 +454,9 @@ body{
 	margin-bottom: 6px;
 	width: calc(100% - 12px);
 }
-#cluster .connectedClients { 
-	grid-area: connectedClients; 
+
+#cluster .connectedClients {
+	grid-area: connectedClients;
 	color: white;
 	border: 1px solid white;
 	border-radius: 3px;
@@ -402,8 +465,8 @@ body{
 	width: calc(100% - 12px);
 }
 
-#cluster .batteryPercentage { 
-	grid-area: batteryPercentage; 
+#cluster .batteryPercentage {
+	grid-area: batteryPercentage;
 	color: white;
 	border: 1px solid white;
 	border-radius: 3px;
@@ -412,8 +475,8 @@ body{
 	width: calc(100% - 12px);
 }
 
-#cluster .velocity { 
-	grid-area: velocity;  
+#cluster .velocity {
+	grid-area: velocity;
 	color: white;
 	align-self: center;
 	justify-self: center;
@@ -421,8 +484,8 @@ body{
 	margin-left: 12px;
 }
 
-#cluster .velocityPercentage{ 
-	grid-area: velocityPercentage;  
+#cluster .velocityPercentage {
+	grid-area: velocityPercentage;
 	color: white;
 	align-self: center;
 	justify-self: center;
@@ -430,7 +493,7 @@ body{
 	width: calc(100% - 12px);
 }
 
-#cluster .velocityPercentage div{
+#cluster .velocityPercentage div {
 	width: 100%;
 	background-color: white;
 	align-self: center;
@@ -438,7 +501,7 @@ body{
 	display: block;
 }
 
-#cluster .velocityPercentage div div{ 
+#cluster .velocityPercentage div div {
 	height: 16px;
 	margin: 0px;
 	width: 100%;
@@ -447,9 +510,48 @@ body{
 	justify-self: center;
 }
 
-#cluster .velocitySystem { 
-	grid-area: velocitySystem;  
+#cluster .velocitySystem {
+	grid-area: velocitySystem;
 	color: white;
 	align-self: center;
 	justify-self: center;
+}
+
+.settingsContainer {
+	display: grid;
+	grid-template-columns: 1fr 1.5fr;
+	grid-template-rows: 0.5fr 1.5fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas: "settingsHead settingsHead"
+    "settingsTOC settingsContent";
+}
+
+.settingsHead {
+	grid-area: settingsHead;
+}
+
+.settingsTOC {
+	grid-area: settingsTOC;
+	text-align: right;
+	margin-right: 150px;
+}
+
+.settingsContent {
+	grid-area: settingsContent;
+	text-align: left;
+	border-left: solid #fff;
+}
+
+.settingsContent li {
+	margin-left: 100px;
+}
+
+.overlay li {
+	padding: 8px;
+	text-decoration: none;
+	list-style-type: none;
+	font-size: 24px;
+	color: #f1f1f1;
+	transition: 0.3s;
 }

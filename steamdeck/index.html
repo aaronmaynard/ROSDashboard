@@ -1,117 +1,152 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="ROS Controller - Steamdeck">
-		<meta name="author" content="Aaron Travis Maynard">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>::: ROS Controller - Steamdeck</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
-		<script type="text/javascript" src="js/roslib.min.js"></script>
-		<script type="text/javascript" src="js/nipplejs.js"></script>
-		<script type="text/javascript" src="js/mod.js"></script>
-		<script type="text/javascript" src="js/ros.js"></script>
-		<!-- DEMO TOOLS -->
-		<link rel="stylesheet" href="demo/demo.css">
-		<link rel="stylesheet" href="demo/jquery-ui.min.css">
-		<script src="demo/jquery.min.js"></script>
-		<script src="demo/jquery-ui.min.js"></script>
-		
-	</head>
-	<body>
-		<!-- INITIALIZATION OVERLAY -->
-		<div id="connectClient" class="overlay">
-			<a href="javascript:void(0)" class="closebtn" onclick="connectClientClose()">&times;</a>
-			<div class="overlay-content">
-				<span>Workspace IP:Port <input type="text" id="wsText" value="localhost:9090"><input type="button" id="wsButton" onclick="setWS()" value="Connect"></span>
-				<br>
-				<div id="loader" style="visibility: hidden;">
-					<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="ROS Controller - Steamdeck">
+	<meta name="author" content="Aaron Travis Maynard">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>::: ROS Controller - Steamdeck</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/roslib.min.js"></script>
+	<script type="text/javascript" src="js/nipplejs.js"></script>
+	<script type="text/javascript" src="js/mod.js"></script>
+	<script type="text/javascript" src="js/ros.js"></script>
+	<!-- DEMO TOOLS -->
+	<link rel="stylesheet" href="demo/demo.css">
+	<link rel="stylesheet" href="demo/jquery-ui.min.css">
+	<script src="demo/jquery.min.js"></script>
+	<script src="demo/jquery-ui.min.js"></script>
+</head>
+
+<body>
+	<!-- INITIALIZATION OVERLAY -->
+	<div id="connectClient" class="overlay"> <a href="javascript:void(0)" class="closebtn" onclick="connectClientClose()">&times;</a>
+		<div class="overlay-content"> <span>Workspace IP:Port <input type="text" id="wsText" value="localhost:9090"><input type="button" id="wsButton" onclick="setWS()" value="Connect"></span>
+			<br>
+			<div id="loader" style="visibility: hidden;">
+				<div class="lds-grid">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
 				</div>
 			</div>
 		</div>
-		<!-- SETTINGS OVERLAY -->
-		<div id="settings" class="overlay">
-			<a href="javascript:void(0)" class="closebtn" onclick="settingsClose()">&times;</a>
-			<div class="overlay-content">
-				<span>Settings Page</span>
-				<br>
-				<p>Stuff toodalaloo</p>
+	</div>
+	<!-- SETTINGS OVERLAY -->
+	<div id="settings" class="overlay"> <a href="javascript:void(0)" class="closebtn" onclick="settingsClose()">&times;</a>
+		<div class="overlay-content">
+			<div class="settingsContainer">
+				<div class="settingsHead"><span>Settings Page</span></div>
+				<div class="settingsTOC">
+					<ul>
+						<li> Item 1 </li>
+						<li> Item 2 </li>
+						<li> Item 3 </li>
+						<li> Item 4 </li>
+					</ul>
+				</div>
+				<div class="settingsContent">
+					<ul>
+						<li> Item 1 </li>
+						<li> Item 2 </li>
+						<li> Item 3 </li>
+						<li> Item 4 </li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<script>
-			connectClientOpen();
-		</script>
-		<!-- MAIN DISPLAY -->		
-		<div id="main" class="container">
-			<!--
+	</div>
+	<script>
+	connectClientOpen();
+	</script>
+	<!-- MAIN DISPLAY -->
+	<div id="main" class="container">
+		<!--
 			The following areas are sections set by the CSS-grid.  Each section may have its own settings.
 			-->
-			<!-- STATUS BAR -->
-			<div class="statusBar">
-				<div><div></div></div>
-				<div><div></div></div>
-			</div>			
-			<!-- NOTIFICATIONS -->
-			<div class="notifications">
-				<h2>Notification Area</h2>
-				<p>Battery Simulator</p>
-				<div id="sliderBattery"></div>
-				<p>Velocity Simulator</p>
-				<div id="sliderVelocity"></div>
+		<!-- STATUS BAR -->
+		<div class="statusBar">
+			<div>
+				<div></div>
 			</div>
-			<!-- MAP -->
-			<div class="map uiElement">
-				<div id="mapTitle">Topdown View</div>
-				<div id="mapWindow">
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<div class="mapTick"></div>
-					<svg xmlns="http://www.w3.org/2000/svg" class="svg-triangle">
-						  <defs>
-							<linearGradient id="MyGradient" x2="0%" y2="100%">
-							  <stop offset="5%" stop-color="#ffffff10" />
-							  <stop offset="95%" stop-color="#ffffff50" />
-							</linearGradient>
-						  </defs>
-						<polygon points="0,0 180,0 90, 90"/>
-					</svg>
-				</div>
-			</div>			
-			<!-- CENTRAL BUTTONS -->
-			<div class="auxButtons uiElement">
-				<button class="buttonAux" onclick=""><span>Y</span><span>AUX 1</span></button>
-				<br>
-				<button class="buttonAux" onclick=""><span>X</span><span>AUX 2</span></button>
-				<button class="buttonAux" onclick=""><span>B</span><span>AUX 3</span></button>
-				<br>
-				<button class="buttonAux" onclick=""><span>A</span><span>AUX 4</span></button>
-			</div>
-			<!-- INFO BOX BR -->
-			<div class="infoBox uiElement">
-				<div id="cluster">
-				  <div class="localizationScore"><i class="fa fa-map" style="font-size:16px"></i> BARBAR 000</div>
-				  <div class="connectedClients"><i class="fa fa-desktop" style="font-size:16px"></i> 0</div>
-				  <div class="batteryPercentage"><i class="fa fa-battery-0" style="font-size:16px"></i> 000</div>
-				  <div class="velocity">0.00</div>
-				  <div class="velocityPercentage"><div><div></div></div></div>
-				  <div class="velocitySystem">M/S</div>
-				</div>
-			</div>
-			<!-- JOYSTICK -->
-			<div id="joystick" class="joystick"></div>
-			<!-- SETTINGS -->
-			<div class="settingsButtons uiElement">
-				<a onclick="settingsOpen()"><button class="buttonSet" onclick=""><i class="fa fa-gear" style="font-size:24px"></i></button></a>
-				<a onclick="connectClientOpen()"><button class="buttonSet" onclick=""><i class="fa fa-wifi" style="font-size:24px"></i></button></a>
+			<div>
+				<div></div>
 			</div>
 		</div>
-		<script type="text/javascript" src="demo/demo.js"></script>
-	</body>
+		<!-- NOTIFICATIONS -->
+		<div class="notifications">
+			<h2>Notification Area</h2>
+			<p>Battery Simulator</p>
+			<div id="sliderBattery"></div>
+			<p>Velocity Simulator</p>
+			<div id="sliderVelocity"></div>
+		</div>
+		<!-- MAP -->
+		<div class="map uiElement">
+			<div id="mapTitle">Topdown View</div>
+			<div id="mapWindow">
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<div class="mapTick"></div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="svg-triangle">
+					<defs>
+						<linearGradient id="MyGradient" x2="0%" y2="100%">
+							<stop offset="5%" stop-color="#ffffff10" />
+							<stop offset="95%" stop-color="#ffffff50" /> </linearGradient>
+					</defs>
+					<polygon points="0,0 180,0 90, 90" /> </svg>
+			</div>
+		</div>
+		<!-- CENTRAL BUTTONS -->
+		<div class="auxButtons uiElement">
+			<button class="buttonAux" onclick=""><span>Y</span><span>AUX 1</span></button>
+			<br>
+			<button class="buttonAux" onclick=""><span>X</span><span>AUX 2</span></button>
+			<button class="buttonAux" onclick=""><span>B</span><span>AUX 3</span></button>
+			<br>
+			<button class="buttonAux" onclick=""><span>A</span><span>AUX 4</span></button>
+		</div>
+		<!-- INFO BOX BR -->
+		<div class="infoBox uiElement">
+			<div id="cluster">
+				<div class="localizationScore"><i class="fa fa-map" style="font-size:16px"></i> BARBAR 000</div>
+				<div class="connectedClients"><i class="fa fa-desktop" style="font-size:16px"></i> 0</div>
+				<div class="batteryPercentage"><i class="fa fa-battery-0" style="font-size:16px"></i> 000</div>
+				<div class="velocity">0.00</div>
+				<div class="velocityPercentage">
+					<div>
+						<div></div>
+					</div>
+				</div>
+				<div class="velocitySystem">M/S</div>
+			</div>
+		</div>
+		<!-- JOYSTICK -->
+		<div id="joystick" class="joystick"></div>
+		<!-- SETTINGS -->
+		<div class="settingsButtons uiElement">
+			<a onclick="settingsOpen()">
+				<button class="buttonSet" onclick=""><i class="fa fa-gear" style="font-size:24px"></i></button>
+			</a>
+			<a onclick="connectClientOpen()">
+				<button class="buttonSet" onclick=""><i class="fa fa-wifi" style="font-size:24px"></i></button>
+			</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="demo/demo.js"></script>
+</body>
+
 </html>
