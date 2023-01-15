@@ -83,6 +83,6 @@ $("#sliderVelocity").slider({
 		var maxSpeed = 1.00; // m/s
 		var vel = maxSpeed * (ui.value / 100);
 		velDisplay.innerHTML = (vel).toFixed(2);
-		$('.velocityPercentage').children().children().css("width", (100 - ui.value) + "%");
+		$('.velocityPercentage').children().children().css("width", (ui.value) + "%");
 	}
 });

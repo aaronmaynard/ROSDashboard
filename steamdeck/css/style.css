@@ -18,6 +18,7 @@ body {
 #main {
 	height: inherit;
 	/*background-image: url('../images/example.jpg');*/
+	/*background-image: url('../images/placeholder.png');*/
 	/*background-image: url('http://192.168.1.150:8080/stream?topic=/realsense/color/image_raw');*/
 	background-size: 100% 100%;
 }
@@ -495,7 +496,7 @@ body {
 
 #cluster .velocityPercentage div {
 	width: 100%;
-	background-color: white;
+	background-color: grey;
 	align-self: center;
 	justify-self: center;
 	display: block;
@@ -504,8 +505,8 @@ body {
 #cluster .velocityPercentage div div {
 	height: 16px;
 	margin: 0px;
-	width: 100%;
-	background-color: grey;
+	width: 0%;
+	background-color: white;
 	align-self: center;
 	justify-self: center;
 }
@@ -618,4 +619,17 @@ input:checked + .slider:before {
 
 .settingsContent hr {
 	width: 90%;
+}
+
+#joystick{
+	position: fixed;
+	bottom: 350px;
+	right: 150px;
+}
+
+div#nipple_0_0 .front{
+    	background-image: url(../images/jfront.png) !important;
+}
+div#nipple_0_0 .back{
+    	background-image: url(../images/jback.png) !important;
 }
