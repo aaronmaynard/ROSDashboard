@@ -19,7 +19,7 @@ body {
 	height: inherit;
 	/*background-image: url('../images/example.jpg');*/
 	/*background-image: url('../images/placeholder.png');*/
-	/*background-image: url('http://192.168.1.150:8080/stream?topic=/realsense/color/image_raw');*/
+	background-image: url('http://192.168.86.20:8080/stream?topic=/camera/color/image_raw');
 	background-size: 100% 100%;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .uiElement {
-	opacity: 1.0;
+	opacity: 0.5;
  /*Later change to 0.5*/
 	margin: 10px;
 }
