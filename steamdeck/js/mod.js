@@ -25,6 +25,15 @@ function toggleJoy() {
   }
 }
 
+function toggleMiniMap() {
+  var x = document.getElementById("mini-map");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 function openDesktopSite() {
 
 }
