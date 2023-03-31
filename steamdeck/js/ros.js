@@ -12,7 +12,7 @@ function setWS() {
 		console.log("Connected");
 		document.getElementById("loader").style.visibility = 'hidden';
 		rosConnected();
-		closeSetup();
+		connectClientClose();
 	});
 	ros.on('error', function(error) {
 		console.log("Error");
@@ -27,6 +27,7 @@ function setWS() {
 }
 
 function rosConnected() {
+	// Motion of the ocean
 	cmd_vel_listener = new ROSLIB.Topic({
 		ros: ros,
 		name: "/cmd_vel",
@@ -37,6 +38,8 @@ function rosConnected() {
 		speed = (velocity * 1).toFixed(1)
 			document.getElementById("speedSec").innerHTML = speed + " M/S";
 	});
+	
+	// Connected clients
 	connected_client_listener = new ROSLIB.Topic({
 		ros: ros,
 		name: "/client_count",
@@ -46,6 +49,35 @@ function rosConnected() {
 		var connections = clients.data
 		var connectionsText = document.getElementById("cluster").getElementsByClassName("connectedClients")[0];
 		connectionsText.innerHTML = '<i class="fa fa-desktop" style="font-size:16px"></i> ' + connections;
+	});
+	
+	// Docking procedures
+	dock_procedure = new ROSLIB.Topic({
+		ros: ros,
+		name: "/dock",
+		messageType: 'std_msgs/Empty'
+	});
+	undock_procedure = new ROSLIB.Topic({
+		ros: ros,
+		name: "/undock",
+		messageType: 'std_msgs/Empty'
+	});
+	dockFunction = function(){
+		// Change HTML as necessary.
+	}
+	undockFunction = function(){
+		// Change HTML as necessary.
+	}
+	
+	// Battery 
+	listener_battery_pct = new ROSLIB.Topic({
+		ros: ros,
+		name: "/battery/charge_ratio",
+		messageType: 'std_msgs/Float32'
+	});
+	listener_battery_pct.subscribe(function(msg){
+		var batteryPercentage = document.getElementById("cluster").getElementsByClassName("batteryPercentage")[0];
+		batteryPercentage.innerHTML = '<i class="fa fa-battery-3" style="font-size:16px"></i> ' + msg.toFixed(2)*100;
 	});
 }
 
