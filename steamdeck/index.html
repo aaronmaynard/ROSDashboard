@@ -19,7 +19,6 @@
 	<script src="demo/jquery.min.js"></script>
 	<script src="demo/jquery-ui.min.js"></script>
 </head>
-
 <body>
 	<!-- INITIALIZATION OVERLAY -->
 	<div id="connectClient" class="overlay"> <a href="javascript:void(0)" class="closebtn" onclick="connectClientClose()">&times;</a>
@@ -47,16 +46,12 @@
 				<div class="settingsHead"><span>Settings Page</span></div>
 				<div class="settingsTOC">
 					<ul>
-						<li> Item 1 </li>
 						<li> Virtual Joystick </li>
-						<li> Item 3 </li>
-						<li> Item 4 </li>
+						<li> Mini-Map </li>
 					</ul>
 				</div>
 				<div class="settingsContent">
 					<ul>
-						<li> Item 1 </li>
-						<hr>
 						<li>
 							<h4>Virtual Joystick</h4>
 							Add a joystick to the lower right section of the screen for touch control.
@@ -67,9 +62,15 @@
 							</label>
 						</li>
 						<hr>
-						<li> Item 3 </li>
-						<hr>
-						<li> Item 4 </li>
+						<li>
+							<h4>Mini-Map</h4>
+							Enable or disable the Mini-Map on the lower left corner.
+							<br><br>
+							<label class="switch">
+								<input type="checkbox" checked id="toggle-mini-map" >
+								<span class="slider round"></span>
+							</label>						
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -84,24 +85,24 @@
 			The following areas are sections set by the CSS-grid.  Each section may have its own settings.
 			-->
 		<!-- STATUS BAR -->
-		<div class="statusBar">
+		<!--<div class="statusBar">
 			<div>
 				<div></div>
 			</div>
 			<div>
 				<div></div>
 			</div>
-		</div>
+		</div> -->
 		<!-- NOTIFICATIONS -->
-		<div class="notifications">
+		<!-- <div class="notifications">
 			<h2>Notification Area</h2>
 			<p>Battery Simulator</p>
 			<div id="sliderBattery"></div>
 			<p>Velocity Simulator</p>
 			<div id="sliderVelocity"></div>
-		</div>
+		</div> -->
 		<!-- MAP -->
-		<div class="map uiElement">
+		<div id="mini-map" class="map uiElement">
 			<div id="mapTitle">Topdown View</div>
 			<div id="mapWindow">
 				<div class="mapTick"></div>
