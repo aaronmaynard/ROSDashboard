@@ -46,7 +46,7 @@ function actionLink() {
 document.addEventListener('DOMContentLoaded', function () {
   var checkbox = document.querySelector('input[type="checkbox"]');
   // Hide joystick on load
-  toggleJoy();
+  //toggleJoy();
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
       // do this
