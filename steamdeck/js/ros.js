@@ -76,8 +76,9 @@ function rosConnected() {
 		messageType: 'std_msgs/Float32'
 	});
 	listener_battery_pct.subscribe(function(msg){
+		var percentage = (msg.data * 100).toFixed(2);
 		var batteryPercentage = document.getElementById("cluster").getElementsByClassName("batteryPercentage")[0];
-		batteryPercentage.innerHTML = '<i class="fa fa-battery-3" style="font-size:16px"></i> ' + msg.toFixed(2)*100;
+		batteryPercentage.innerHTML = '<i class="fa fa-battery-3" style="font-size:16px"></i> ' + percentage;
 	});
 }
 
