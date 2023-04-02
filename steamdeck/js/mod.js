@@ -55,18 +55,21 @@ function actionLink() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]');
-  // Hide joystick on load
-  //toggleJoy();
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      // do this
-      console.log('Checked');
-	  toggleJoy();
-    } else {
-      // do that
-      console.log('Not checked');
-	  toggleJoy();
+  toggleJoy();
+  var checkboxElems = document.querySelectorAll("input[type='checkbox']");
+  for (var i = 0; i < checkboxElems.length; i++) {
+    checkboxElems[i].addEventListener("change", displayCheck);
+  }
+
+  function displayCheck(e){
+    if(e.target.id === 'toggle-virtual-joystick'){
+      console.log('toggling')
+      toggleJoy();
     }
-  });
+    if(e.target.id === 'toggle-mini-map'){
+      console.log('toggling')
+      toggleMiniMap();
+    }
+
+  }
 });
