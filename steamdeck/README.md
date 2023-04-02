@@ -11,12 +11,12 @@
 
 - Change ROS workspace 
 	- [X] Make a prompt at load
-	- [ ] Option in settings
+	- [X] Option in settings
 
 - Adjustability
 	- [ ] Speed slider
 	- [ ] Theme Selector
-	- [ ] Change joystick control type
+	- [X] Change joystick control type (digital/physical)
 
 ## Control Layout
 
