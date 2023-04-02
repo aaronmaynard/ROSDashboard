@@ -34,6 +34,17 @@ function toggleMiniMap() {
   }
 }
 
+function auxButtons() {
+  var buttons = document.getElementsByClassName("buttonAux");
+  const ListOfButtons = ["Y", "X", "B", "A"];
+  for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function(e) {
+          var x = this.id;
+          console.log("Button ", ListOfButtons[x[x.length - 1] - 1]);
+      });
+  }
+}
+
 function openDesktopSite() {
 
 }
