@@ -34,6 +34,17 @@ function toggleMiniMap() {
   }
 }
 
+function auxButtons() {
+  var buttons = document.getElementsByClassName("buttonAux");
+  const ListOfButtons = ["Y", "X", "B", "A"];
+  for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function(e) {
+          var x = this.id;
+          console.log("Button ", ListOfButtons[x[x.length - 1] - 1]);
+      });
+  }
+}
+
 function openDesktopSite() {
 
 }
@@ -44,7 +55,6 @@ function actionLink() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-
   toggleJoy();
   var checkboxElems = document.querySelectorAll("input[type='checkbox']");
   for (var i = 0; i < checkboxElems.length; i++) {
@@ -62,22 +72,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   }
-  // var checkbox = document.querySelector('input[type="checkbox"]');
-  // // Hide joystick on load
-  // toggleJoy();
-  // checkbox.addEventListener('change', function () {
-  //   if (checkbox.checked) {
-  //     // do this
-  //     console.log('Checked');
-	//   toggleJoy();
-  //   } else {
-  //     // do that
-  //     console.log('Not checked');
-	//   toggleJoy();
-  //   }
-  // });
 });
-
-
-
-
