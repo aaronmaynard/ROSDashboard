@@ -22,7 +22,9 @@
 <body>
 	<!-- INITIALIZATION OVERLAY -->
 	<div id="connectClient" class="overlay"> <a href="javascript:void(0)" class="closebtn" onclick="connectClientClose()">&times;</a>
-		<div class="overlay-content"> <span>Workspace IP:Port <input type="text" id="wsText" value="localhost:9090"><input type="button" id="wsButton" onclick="setWS()" value="Connect"></span>
+		<div class="overlay-content"> 
+			<span>Workspace IP:Port <input type="text" id="wsText" value="localhost:9090">
+				<input type="button" id="wsButton" onclick="setWS()" value="Connect"></span>
 			<br>
 			<div id="loader" style="visibility: hidden;">
 				<div class="lds-grid">
