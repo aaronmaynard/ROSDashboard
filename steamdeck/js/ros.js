@@ -105,6 +105,30 @@ function rosConnected() {
 		});
 		topic.publish(cmd);
 	};
+	var button_AUX3 = document.getElementById('AUX3');
+	button_AUX2.onclick = function(){
+		var cmd = new ROSLIB.Message({
+			data: "AUX3"
+		});
+		var topic = new ROSLIB.Topic({
+			ros: ros,
+			name: '/amc2_command',
+			messageType: 'std_msgs/String'
+		});
+		topic.publish(cmd);
+	};
+	var button_AUX4 = document.getElementById('AUX4');
+	button_AUX2.onclick = function(){
+		var cmd = new ROSLIB.Message({
+			data: "AUX4"
+		});
+		var topic = new ROSLIB.Topic({
+			ros: ros,
+			name: '/amc2_command',
+			messageType: 'std_msgs/String'
+		});
+		topic.publish(cmd);
+	};
 }
 
 // JOYSTICK
