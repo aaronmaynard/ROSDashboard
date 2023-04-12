@@ -80,6 +80,31 @@ function rosConnected() {
 		var batteryPercentage = document.getElementById("cluster").getElementsByClassName("batteryPercentage")[0];
 		batteryPercentage.innerHTML = '<i class="fa fa-battery-3" style="font-size:16px"></i> ' + percentage;
 	});
+	// Command Listener
+	var button_AUX1 = document.getElementById('AUX1');
+	button_AUX1.onclick = function(){
+		var cmd = new ROSLIB.Message({
+			data: "AUX1"
+		});
+		var topic = new ROSLIB.Topic({
+			ros: ros,
+			name: '/amc2_command',
+			messageType: 'std_msgs/String'
+		});
+		topic.publish(cmd);
+	};
+	var button_AUX2 = document.getElementById('AUX2');
+	button_AUX2.onclick = function(){
+		var cmd = new ROSLIB.Message({
+			data: "AUX2"
+		});
+		var topic = new ROSLIB.Topic({
+			ros: ros,
+			name: '/amc2_command',
+			messageType: 'std_msgs/String'
+		});
+		topic.publish(cmd);
+	};
 }
 
 // JOYSTICK
